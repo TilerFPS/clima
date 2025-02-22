@@ -14,7 +14,7 @@
 
     <script>
         const apiKey = '0370775959e74af8a9440433241210'; // Sua chave da WeatherAPI
-        const url = `http://api.weatherapi.com/v1/current.json?key=${apiKey}&q=Engenho Maranguape,Brazil`;
+        const url = `https://api.weatherapi.com/v1/current.json?key=${apiKey}&q=Engenho%20Maranguape,Brazil`;
 
         $.getJSON(url, function(data) {
             const location = 'Vale Verde, Saints';  // Substituindo o nome da cidade
@@ -27,6 +27,8 @@
                 <p>Condição: ${condition}</p>
                 <p>Umidade: ${humidity}%</p>
             `);
+        }).fail(function() {
+            $('#clima').html('<p>Erro ao carregar o clima. Tente novamente mais tarde.</p>');
         });
     </script>
 </body>
